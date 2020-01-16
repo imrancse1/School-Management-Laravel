@@ -182,4 +182,117 @@ Route::get('/schoolList-delete/{id}',[
    'as'=>'schoolList-delete'
 ])->middleware('auth');
 
+// end school manage
+
+//start class route
+
+Route::get('/add-class',[
+   'uses'=>'ClassManagementController@addClass',
+   'as'=>'add-class'
+])->middleware('auth');
+
+Route::post('/class-save',[
+   'uses'=>'ClassManagementController@classSave',
+   'as'=>'class-save'
+])->middleware('auth');
+
+Route::get('/class-list',[
+   'uses'=>'ClassManagementController@classList',
+   'as'=>'class-list'
+])->middleware('auth');
+
+Route::get('/classList-unpublished/{id}',[
+   'uses'=>'ClassManagementController@classListUnpublished',
+   'as'=>'classList-unpublished'
+])->middleware('auth');
+
+Route::get('/classList-published/{id}',[
+   'uses'=>'ClassManagementController@classListPublished',
+   'as'=>'classList-published'
+])->middleware('auth');
+
+Route::get('/classList-edit/{id}',[
+   'uses'=>'ClassManagementController@classListEdit',
+   'as'=>'classList-edit'
+])->middleware('auth');
+
+Route::post('/update-class',[
+   'uses'=>'ClassManagementController@updateClass',
+   'as'=>'update-class'
+])->middleware('auth');
+
+Route::get('/classList-delete/{id}',[
+   'uses'=>'ClassManagementController@classListDelete',
+   'as'=>'classList-delete'
+])->middleware('auth');
+//end class route
+
+// start batch route
+
+Route::get('/add/batch',[
+   'uses'=>'BatchManagementController@addBatch',
+   'as'=>'add-batch'
+])->middleware('auth');
+
+Route::post('/save/batch',[
+   'uses'=>'BatchManagementController@batchSave',
+   'as'=>'batch-save'
+])->middleware('auth');
+
+Route::get('/batch/list',[
+   'uses'=>'BatchManagementController@batchList',
+   'as'=>'batch-list'
+])->middleware('auth');
+
+Route::get('/batch/list-by-ajax',[
+   'uses'=>'BatchManagementController@batchListByAjax',
+   'as'=>'batch-list-by-ajax'
+])->middleware('auth');
+
+Route::get('/batch/unpublished',[
+   'uses'=>'BatchManagementController@batchUnpublished',
+   'as'=>'batch-unpublished'
+])->middleware('auth');
+
+Route::get('/batch/published',[
+   'uses'=>'BatchManagementController@batchPublished',
+   'as'=>'batch-published'
+])->middleware('auth');
+
+Route::get('/batch/delete',[
+   'uses'=>'BatchManagementController@batchDelete',
+   'as'=>'batch-delete'
+])->middleware('auth');
+
+Route::get('/batch/edit/{id}',[
+   'uses'=>'BatchManagementController@batchEdit',
+   'as'=>'batch-edit'
+])->middleware('auth');
+
+Route::post('/batch/update',[
+   'uses'=>'BatchManagementController@batchUpdate',
+   'as'=>'batch-update'
+])->middleware('auth');
+
+//student type route
+
+Route::get('/student-type',[
+   'uses'=>'StudentTypeController@index',
+   'as'=>'student-type'
+])->middleware('auth');
+
+Route::post('/student-type-add',[
+   'uses'=>'StudentTypeController@studentTypeAdd',
+   'as'=>'student-type-add'
+])->middleware('auth');
+
+Route::get('/student-type-list',[
+   'uses'=>'StudentTypeController@studentTypeList',
+   'as'=>'student-type-list'
+])->middleware('auth');
+
+
+
+
+
 
